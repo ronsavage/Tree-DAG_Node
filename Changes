@@ -18,6 +18,8 @@ Revision history for Perl module Tree::DAG_Node.
 	- Add scripts/read.tree.pl, and it's output file scripts/read.tree.log. This program
 		demonstrates the output produced by various methods.
 	- Fix the faulty syntax I had used in Build.PL to identify the github repo.
+	- Delete and re-create github repo after 'git push' failed to upload the new version.
+	- Add LICENSE file to MANIFEST.
 
 1.24  Sun Jan 25 14:17:00 2015
 	- Clean up discussion in docs of original author's reluctance to allow parameters to new().
