@@ -1,0 +1,54 @@
+{
+   "abstract" : "An N-ary tree",
+   "author" : [
+      "Sean M. Burke <sburke@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Module::Build version 0.4211",
+   "license" : [
+      "artistic_2"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Tree-DAG_Node",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Test::More" : 1.001014,
+            "Test::Pod" : 1.48
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : 0.4211
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "File::Slurp::Tiny" : 0.003,
+            "File::Spec" : 3.4,
+            "File::Temp" : 0.19,
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      }
+   },
+   "provides" : {
+      "Tree::DAG_Node" : {
+         "file" : "lib/Tree/DAG_Node.pm",
+         "version" : "1.25"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://www.perlfoundation.org/artistic_license_2_0"
+      ],
+      "repository" : {
+         "url" : "https://github.com/ronsavage/Tree-DAG_Node"
+      }
+   },
+   "version" : "1.25"
+}
