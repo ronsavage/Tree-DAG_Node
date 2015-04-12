@@ -6,7 +6,7 @@ use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 use open     qw(:std :utf8); # Undeclared streams in UTF-8.
 
 our $Debug   = 0;
-our $VERSION = '1.25';
+our $VERSION = '1.26';
 
 use File::Slurp::Tiny 'read_lines';
 
@@ -1373,37 +1373,46 @@ sub string2hashref
 	{
 		# Expect:
 		# 1: The presence of the comma in "(',')" complicates things, so we can't use split(/\s*,\s*/, $s).
-		#	{bracketed_name => "0", quantifier => "", real_name => "(',')"}
+		#	{x => "(',')"}
 		# 2: The presence of "=>" complicates things, so we can't use split(/\s*=>\s*/).
-		#	{bracketed_name => "0", quantifier => "", real_name => "=>"}
+		#	{x => "=>"}
 		# 3: So, assume ', ' is the outer separator, and then ' => ' is the inner separator.
 
 		# Firstly, clean up the input, just to be safe.
 		# None of these will match output from hashref2string($h).
 
-		$s =~ s/^\s+\{/\{/;
-		$s =~ s/^\{\s+/\{/;
-		$s =~ s/\}\s+$/\}/;
-		$s =~ s/\s+\}$/\}/;
+		$s            =~ s/^\s*\{*//;
+		$s            =~ s/\s*\}\s*$/\}/;
+		my($finished) = 0;
 
-		if ($s =~ m/^\{\s*(.*)\}$/)
+		# The first '\' is for UltraEdit's syntax hiliting.
+
+		my($reg_exp)  =
+		qr/
+			([\"'])([^"']*?)\1\s*=>\s*(["'])([^"']*?)\3,?\s*
+			|
+			(["'])([^"']*?)\5\s*=>\s*(.*?),?\s*
+			|
+			(.*?)\s*=>\s*(["'])([^"']*?)\9,?\s*
+			|
+			(.*?)\s*=>\s*(.*?),?\s*
+		/sx;
+
+		my(@got);
+
+		while (! $finished)
 		{
-			my(@attr) = map
-						{
-							($k, $v) = split(/\s=>\s/);
-							$v       =~ s/^([\"\'])(.*)\1$/$2/;
-							($k => $v);
-						} split(/\s*,\s+/, $1);
-
-			if (@attr)
+			if ($s =~ /$reg_exp/gc)
 			{
-				$result = {@attr};
+				push @got, defined($2) ? ($2, $4) : defined($6) ? ($6, $7) : defined($8) ? ($8, $10) : ($11, $12);
+			}
+			else
+			{
+				$finished = 1;
 			}
 		}
-		else
-		{
-			die "Invalid syntax for hashref: $s";
-		}
+
+		$result = {@got};
 	}
 
 	return $result;
@@ -2706,6 +2715,8 @@ methods can be called from anywhere, and not just from within read_tree().
 
 For reading and writing trees to databases, see L<Tree::DAG_Node::Persist>.
 
+Calls L</string2hashref($s)>.
+
 =head2 remove_daughter(LIST)
 
 An exact synonym for L</remove_daughters(LIST)>.
@@ -2867,12 +2878,14 @@ this returns empty-list.
 
 =head2 string2hashref($s)
 
-Returns a hashref built from the string.
+Returns the hashref built from the string.
 
 The string is expected to be something like
 '{AutoCommit => '1', PrintError => "0", ReportError => 1}'.
 
 The empty string is returned as {}.
+
+Called by L</read_tree($file_name)>.
 
 =head2 tree_to_lol()
 

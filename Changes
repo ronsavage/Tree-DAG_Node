@@ -1,5 +1,11 @@
 Revision history for Perl module Tree::DAG_Node.
 
+1.26  Sun Apr 12 13:37:00 2015
+	- Fix bug in string2hashref(), which failed on some strings, such as {a => 'b, c'}.
+		string2hashref() is called by read_tree().
+		Escaped chars are still not handled.
+	- Add t/string2hash.t to test new code.
+
 1.25  Sun Mar 22 11:42:00 2015
 	- I've deleted the undocumented sub _dump_quote(), which butchered Unicode characters
 		when it tried to convert ASCII control characters into printable strings (on the assumption
