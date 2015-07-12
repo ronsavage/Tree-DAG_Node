@@ -1,5 +1,16 @@
 Revision history for Perl module Tree::DAG_Node.
 
+1.27  Sun Jul 12 11:01:00 2015
+	- Remove the line which reads 'use open qw(:std :utf8);'. As Tom Molesworth says:
+		"Specifically, it turns on the UTF-8 encoding layer on STDIO when any code does
+		'use Tree::DAG_Node'. That's no good when code is expecting a different encoding
+		(raw, etc.)". See RT#105798. Karen Etheridge followed up with a comment about it appearing
+		in another module of mine. Then I checked all my modules (including some not intended for
+		publication - Local::*) and found about 28 offenders, with some using it inn multiple files.
+		The original idea came from adopting what Tom Christiansen calls his 'Standard Preamble':
+		http://www.perl.com/pub/2012/04/perlunicook-standard-preamble.html
+		All tests still work after removing that line.
+
 1.26  Sun Apr 12 13:37:00 2015
 	- Fix bug in string2hashref(), which failed on some strings, such as {a => 'b, c'}.
 		string2hashref() is called by read_tree().

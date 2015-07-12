@@ -3,10 +3,9 @@ package Tree::DAG_Node;
 use strict;
 use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
-use open     qw(:std :utf8); # Undeclared streams in UTF-8.
 
 our $Debug   = 0;
-our $VERSION = '1.26';
+our $VERSION = '1.27';
 
 use File::Slurp::Tiny 'read_lines';
 

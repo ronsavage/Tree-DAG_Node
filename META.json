@@ -38,7 +38,7 @@
    "provides" : {
       "Tree::DAG_Node" : {
          "file" : "lib/Tree/DAG_Node.pm",
-         "version" : "1.26"
+         "version" : "1.27"
       }
    },
    "release_status" : "stable",
@@ -50,5 +50,5 @@
          "url" : "https://github.com/ronsavage/Tree-DAG_Node"
       }
    },
-   "version" : "1.26"
+   "version" : "1.27"
 }
