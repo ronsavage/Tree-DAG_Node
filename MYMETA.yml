@@ -3,10 +3,9 @@ abstract: 'An N-ary tree'
 author:
   - 'Sean M. Burke <sburke@cpan.org>'
 build_requires:
-  Test::More: '1.001014'
-  Test::Pod: '1.48'
+  ExtUtils::MakeMaker: '0'
 configure_requires:
-  Module::Build: '0.4211'
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 0
 generated_by: 'Module::Build version 0.4211, CPAN::Meta::Converter version 2.143240'
 license: artistic_2
@@ -22,6 +21,8 @@ requires:
   File::Slurp::Tiny: '0.003'
   File::Spec: '3.4'
   File::Temp: '0.19'
+  Test::More: '1.001014'
+  Test::Pod: '1.48'
   strict: '0'
   warnings: '0'
 resources:

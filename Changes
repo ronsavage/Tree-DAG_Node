@@ -11,6 +11,7 @@ Revision history for Perl module Tree::DAG_Node.
 		http://www.perl.com/pub/2012/04/perlunicook-standard-preamble.html
 		All tests still work after removing that line.
 	- Remove Build.PL. Ship only Makefile.PL.
+	- Remove .gitignore from MANIFEST.
 
 1.26  Sun Apr 12 13:37:00 2015
 	- Fix bug in string2hashref(), which failed on some strings, such as {a => 'b, c'}.
