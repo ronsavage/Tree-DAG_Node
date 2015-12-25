@@ -1,6 +1,6 @@
 Revision history for Perl module Tree::DAG_Node.
 
-1.27  Sun Jul 12 11:01:00 2015
+1.27  2015-07-12T11:01:00
 	- Remove the line which reads 'use open qw(:std :utf8);'. As Tom Molesworth says:
 		"Specifically, it turns on the UTF-8 encoding layer on STDIO when any code does
 		'use Tree::DAG_Node'. That's no good when code is expecting a different encoding
@@ -12,13 +12,13 @@ Revision history for Perl module Tree::DAG_Node.
 		All tests still work after removing that line.
 	- Remove Build.PL. Ship only Makefile.PL.
 
-1.26  Sun Apr 12 13:37:00 2015
+1.26  2015-04-12T13:37:00
 	- Fix bug in string2hashref(), which failed on some strings, such as {a => 'b, c'}.
 		string2hashref() is called by read_tree().
 		Escaped chars are still not handled.
 	- Add t/string2hash.t to test new code.
 
-1.25  Sun Mar 22 11:42:00 2015
+1.25  2015-03-22T11:42:00
 	- I've deleted the undocumented sub _dump_quote(), which butchered Unicode characters
 		when it tried to convert ASCII control characters into printable strings (on the assumption
 		all data is ASCII). Thanx to Dr. Petra Steiner (Germany) for discussion and some testing.
@@ -39,7 +39,7 @@ Revision history for Perl module Tree::DAG_Node.
 	- Delete and re-create github repo after 'git push' failed to upload the new version.
 	- Add LICENSE file to MANIFEST.
 
-1.24  Sun Jan 25 14:17:00 2015
+1.24  2015-01-25T14:17:00
 	- Clean up discussion in docs of original author's reluctance to allow parameters to new().
 	- Rewrite bareword filehandles (INX) to use a variable (my $fh).
 	- Rename github repo from Tree--DAG_Node to Tree-DAG_Node - My new standard.
@@ -49,7 +49,7 @@ Revision history for Perl module Tree::DAG_Node.
 		the first char of the previous node's name. Use scripts/cut.and.paste.subtrees.pl
 		to see the difference.
 
-1.23  Mon Oct 20 18:12:00 2014
+1.23  2014-10-20T18:12:00
 	- Change output format when using node2string(), which is called by tree2string().
 		Indentation which used to be '|---' is now '|--- '. So, a tree which used to be printed as:
 		|---:default
@@ -66,29 +66,29 @@ Revision history for Perl module Tree::DAG_Node.
 		This makes the difference between node names ''/'-', '1'/'-1', etc, much clearer.
 		Apologies to anyone who runs tests which compare the output with pre-existing files.
 
-1.22  Thu Feb 13 13:14:00 2014
+1.22  2014-02-13T13:14:00
 	- t/read.tree.t was still using File::Slurp :-(.
 
-1.21  Thu Feb 13 11:14:00 2014
+1.21  2014-02-13T11:14:00
 	- Switch from File::Slurp to File::Slurp::Tiny, on the advice of Karen Etheridge. See RT#92976.
 
-1.20  Fri Jan 31 09:46:00 2014
+1.20  2014-01-31T09:46:00
 	- After a private email from Paul Howarth (yea!) I see I need File::Temp V 0.19 because that's
 		the version which introduced the newdir() method, as used in the test suite. Sorry for the
 		churn.
 
-1.19  Thu Jan 30 09:24:00 2014
+1.19  2014-01-30T09:24:00
 	- Set pre-req File::Temp version # to 0 (back from 0.2301). See D A Golden's blog entry:
 		http://www.dagolden.com/index.php/2293/why-installing-distzilla-is-slow-and-what-you-can-do-about-it/.
 
-1.18  Thu Sep 19 14:24:00 2013
+1.18  2013-09-19T14:24:00
 	- No changes, code or otherwise, except for the version # in the *.pm, this file, and
 		Changelog.ini.
 	- Somehow a corrupted version got uploaded to search.cpan.org, so I've just changed the
 		version #. The file on MetaCPAN was fine.
 	- Thanx to Rob (Sisyphus) for reporting this.
 
-1.17  Mon Sep 16 15:24:00 2013
+1.17  2013-09-16T15:24:00
 	- Write test temp files in :raw mode as well as utf-8, for MS Windows users.
 	- Take the opportunity to change all utf8 to utf-8, as per the docs for Encode,
 		except for 'use warnings  qw(FATAL utf8);', which doesn't accept utf-8 :-(.
@@ -99,13 +99,13 @@ Revision history for Perl module Tree::DAG_Node.
 		Replace Perl6::Slurp with File::Slurp, using the latter's binmode option for the encoding.
 		Fix docs where I'd erroneously said File::Slurp didn't support utf8.
 
-1.15  Fri Sep  6 11:10:00 2013
+1.15  2013-09-06T11:10:00
 	- Replace Path::Tiny with File::Spec, because the former's list of dependencies is soooo long.
 		Changed files: t/read.tree.t, Build.PL and Makefile.PL.
 		See: RT#88435 for an explanation.
 	- Move t/pod.t to xt/author/pod.t.
 
-1.14  Wed Sep  4 13:44:00 2013
+1.14  2013-09-04T13:44:00
 	- Document the copy() method.
 	- Patch the copy() method so it respects the {no_attribute_copy => 1} option.
 	- Add method read_tree(), for text files. It uses Perl6::Slurp (which supports utf8).
@@ -115,40 +115,40 @@ Revision history for Perl module Tree::DAG_Node.
 	- Add t/tree.with.attributes.txt and t/tree.without.attributes.txt for use by t/read.tree.t.
 	- Make Perl V 5.8.1 a pre-req so we have access to the utf8 pragma.
 
-1.13  Mon Aug 12 17:16:00 2013
+1.13  2013-08-12T17:16:00
 	- Change the values accepted for the no_attributes option from undef and 1 to 0 and 1.
 		If undef is used, it becomes 0, so pre-existing code will not change behaviour.
 		This makes it easier to pass 0 or 1 from the command line, since there is no default value
 		available.
 
-1.12  Wed Jul  3 16:38:00 2013
+1.12  2013-07-03T16:38:00
 	- Change text in README referring to licence to match text in body of source, since it was in
 		conflict with the Artistic Licence V 2.0.
 		This was requested by Petr Pisar who packages stuff for Red Hat.
 	- Rename CHANGES to Changes as per CPAN::Changes::SPEC.
 	- Various spelling fixes in the docs, as kindly reported by dsteinbrunner.
 
-1.11  Mon Feb  4 09:50:00 2013
+1.11  2013-02-04T09:50:00
 	- Correct the date (2012 -> 2013) in this file used for V 1.10.
 	- Correct the text at L<Tree::DAG_Node/AUTHOR> so it refers to Artistic License 2.0,
 		which now matches what it says in Build.PL and Makefile.PL. Resolves RT#83088.
 
-1.10  Fri Feb  1 08:53:00 2013
+1.10  2013-02-01T08:53:00
 	- Change t/pod.t to look for Test::Pod 1.45, but comment out Test::Pod in Build.PL and
 		Makefile.PL. This means Test::Pod is not used at all if it is not installed.
 		As per RT#83077.
 
-1.09  Thu Nov  8 12:38:00 2012
+1.09  2012-11-08T12:38:00
 	- No code changes.
 	- Oops. The changes in V 1.08 we made in the other 10 distros, but not in this one.
 		My apologies.
 
-1.08  Thu Nov  8 12:38:00 2012
+1.08  2012-11-08T12:38:00
 	- No code changes.
 	- For pre-reqs such as strict, warnings, etc, which ship with Perl, set the version # to 0.
 		Reported as RT#80663 by Father Chrysostomos for Tree::DAG_Node.
 
-1.07  Thu Nov  1 12:47:00 2012
+1.07  2012-11-01T12:47:00
 	- New maintainer: Ron Savage
 	- Pre-emptive apologies for any changes which are not back-compat. No such problems are
 		expected, but the introduction of new methods may disconcert some viewers.
@@ -172,19 +172,19 @@ Revision history for Perl module Tree::DAG_Node.
 	- Add t/cut.and.paste.subtrees.t.        Warning: Some trees get into an infinite loop.
 	- Document the options (discouraged by Sean) supported in the call to new($hashref).
 
-1.06  Sun Dec  2 12:00:00 1998
+1.06  1998-12-02T12:00:00
 	- New maintainer: David Hand.
 	- No code changes.
 
-1.05  Wed Dec 29 12:00:00 1998
+1.05  1998-12-29T12:00:00
 	- Just repackaging.
 	- No code changes.
 
-1.04  Fri Feb 23 12:00:00 1998
+1.04  1998-02-23T12:00:00
 	- Bugfix: Olegt@dreamtime.net notes a bug in
 		depth_under that apparently always makes it return 0.
 
-1.03  Sat May 13 12:00:00 1998
+1.03  1998-05-13T12:00:00
 	- Superficial changes:
 		Minor doc spiffing-up.
 		Noting my new email address.
@@ -207,7 +207,7 @@ Revision history for Perl module Tree::DAG_Node.
 		Fixed a typo in the docs: corrected one "right_sisters" to "right_sister"
 		Initialized a variable to '' to avoid warnings under -w. Thanks to Gilles Lamiral.
 
-1.01  Fri May 14 12:00:00 1998
+1.01  1998-05-14T12:00:00
 	- Major additions:
 		Scads of new methods.  Still (as far as I know) backward
 		compatible with all previous versions.  Some minor changes in
@@ -220,16 +220,16 @@ Revision history for Perl module Tree::DAG_Node.
 		(which is why you don't see a detailed list of differences here),
 		altho apparently somehow I managed to document all the new methods.
 
-0.75  Tue Nov  3 12:00:00 1998
+0.75  1998-11-03T12:00:00
 	- Minor changes:
 		New methods new_daughter, new_daughter_left.
 		$obj->new constructor syntax now documented.
 		Internal accesses to "daughter" and "mother" attribs are now direct, for efficiency's sake.
 	- Minor improvements to the docs.
 
-0.74  Wed Oct 28 12:00:00 1998
+0.74  1998-10-28T12:00:00
 	- Whoops, forgot to bundle the README.
 	- No change in the code.
 
-0.73  Tue Oct 27 12:00:00 1998
+0.73  1998-10-27T12:00:00
 	- First release.
