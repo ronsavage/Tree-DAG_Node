@@ -1,4 +1,3 @@
-.gitignore
 Changelog.ini
 Changes
 lib/Tree/DAG_Node.pm
