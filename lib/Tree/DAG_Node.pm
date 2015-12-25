@@ -68,7 +68,7 @@ sub _add_daughters_wrapper {
       ($daughter->name() || $daughter),
       ($mother->name()   || $mother)     if $Debug > 1;
 
-    die "Mother ($mother) can't be its own daughter\n" if $mother eq $daughter;
+    die 'Mother (' . $mother -> name . ") can't be its own daughter\n" if $mother eq $daughter;
 
     die "$daughter (" . ($daughter->name || 'no_name') .
       ") is an ancestor of $mother (" . ($mother->name || 'no_name') .
