@@ -27,12 +27,16 @@
       "runtime" : {
          "requires" : {
             "File::Slurp::Tiny" : "0.003",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
             "File::Spec" : "3.4",
             "File::Temp" : "0.19",
             "Test::More" : "1.001014",
-            "Test::Pod" : "1.48",
-            "strict" : "0",
-            "warnings" : "0"
+            "Test::Pod" : "1.48"
          }
       }
    },
