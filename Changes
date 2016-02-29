@@ -6,6 +6,13 @@ Revision history for Perl module Tree::DAG_Node.
 		Many thanx to Kent Fredric in RT#112568 for this suggestion.
 	- Expand the SYNOPSIS.
 	- Update MANIFEST.SKIP to include .gitignore.
+	- Finally add lightweight git tags to distros, so that if you have a Bash alias such as
+		alias gl='git log --decorate=full' you'll see something like these 5 lines:
+		commit 2501bd9672244fe698c0f3e48e142637e92eb7e5 (HEAD, tag: refs/tags/1.28, refs/heads/master)
+		Author: ronsavage <ron@savage.net.au>
+		Date:   Tue Mar 1 09:16:46 2016 +1100
+
+		    Update distmeta
 
 1.27  2015-07-12T11:01:00
 	- Remove the line which reads 'use open qw(:std :utf8);'. As Tom Molesworth says:
