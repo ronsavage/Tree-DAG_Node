@@ -5,7 +5,7 @@ use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 our $Debug   = 0;
-our $VERSION = '1.27';
+our $VERSION = '1.28';
 
 use File::Slurp::Tiny 'read_lines';
 
@@ -1726,6 +1726,11 @@ Tree::DAG_Node - An N-ary tree
 
 Or:
 
+	my($count) = 0;
+	my($tree)  = Tree::DAG_Node -> new({name => 'Root', attributes => {'uid' => $count} });
+
+Or:
+
 	my $root = Tree::DAG_Node -> new();
 
 	$root -> name("I'm the tops");
@@ -1736,6 +1741,11 @@ Or:
 	$new_daughter -> name('Another node');
 	$new_daughter -> attributes({uid => 1});
 	...
+
+Lastly, for fancy wrappers - called _add_daughter() - around C<new()>, see these modules:
+L<Marpa::Demo::StringParser> and L<GraphViz2::Marpa>. Both of these modules use L<Moo>.
+
+See scripts/*.pl for other samples.
 
 =head2 Using with utf-8 data
 

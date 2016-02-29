@@ -1,5 +1,11 @@
 Revision history for Perl module Tree::DAG_Node.
 
+1.28  2016-03-01T08:43:00
+	- No code changes.
+	- Rework Makefile.PL so File::Spec, File::Temp, Test::More and Test::Pod are in TEST_REQUIRES.
+		Many thanx to Kent Fredric in RT#112568 for this suggestion.
+	- Expand the SYNOPSIS.
+
 1.27  2015-07-12T11:01:00
 	- Remove the line which reads 'use open qw(:std :utf8);'. As Tom Molesworth says:
 		"Specifically, it turns on the UTF-8 encoding layer on STDIO when any code does

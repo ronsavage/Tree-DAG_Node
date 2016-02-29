@@ -12,30 +12,33 @@ use ExtUtils::MakeMaker;
 
 my(%params) =
 (
-	ABSTRACT => 'An N-ary tree',
-	AUTHOR   => 'Sean M. Burke <sburke@cpan.org>',
-	clean =>
+	ABSTRACT	=> 'An N-ary tree',
+	AUTHOR		=> 'Sean M. Burke <sburke@cpan.org>',
+	clean		=>
 	{
 		FILES => 'blib/* Makefile MANIFEST Tree-DAG_Node-*'
 	},
 	dist =>
 	{
-		COMPRESS => 'gzip',
-		SUFFIX   => 'gz'
+		COMPRESS	=> 'gzip',
+		SUFFIX		=> 'gz'
 	},
-	DISTNAME  => 'Tree-DAG_Node',
-	LICENSE   => 'artistic_2',
-	NAME      => 'Tree::DAG_Node',
-	PL_FILES  => {},
-	PREREQ_PM =>
+	DISTNAME	=> 'Tree-DAG_Node',
+	LICENSE		=> 'artistic_2',
+	NAME		=> 'Tree::DAG_Node',
+	PL_FILES	=> {},
+	PREREQ_PM	=>
 	{
-		'File::Spec' => 3.40,
-		'File::Temp' => 0.19,
-		'File::Slurp::Tiny' => 0.003,
-		'strict' => 0,
-		'Test::More' => 1.001014,
-		'Test::Pod' => 1.48,
-		'warnings' => 0,
+		'File::Slurp::Tiny'	=> 0.003,
+		'strict'			=> 0,
+		'warnings'			=> 0,
+	},
+	TEST_REQUIRES =>
+	{
+		'File::Spec'	=> 3.40,
+		'File::Temp'	=> 0.19,
+		'Test::More'	=> 1.001014,
+		'Test::Pod'		=> 1.48,
 	},
 	VERSION_FROM => 'lib/Tree/DAG_Node.pm',
 );
