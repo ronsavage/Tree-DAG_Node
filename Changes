@@ -1,5 +1,12 @@
 Revision history for Perl module Tree::DAG_Node.
 
+1.29  2016-03-01T13:39:00
+	- After another email exchange with Kent Fredric (via RT) and Karen Etheridge (via the
+		cpan-testers-discuss mailing list), I've edited Makefile.PL, again, to indicate that
+		Test::Pod is needed neither for building nor testing this module, but is only needed for
+		development. Specifically, it's used by xt/author/pod.t, and not elsewhere. See
+		https://metacpan.org/pod/CPAN::Meta::Spec#PREREQUISITES for more details.
+
 1.28  2016-03-01T08:43:00
 	- No code changes.
 	- Rework Makefile.PL so File::Spec, File::Temp, Test::More and Test::Pod are in TEST_REQUIRES.

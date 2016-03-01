@@ -38,7 +38,6 @@ my(%params) =
 		'File::Spec'	=> 3.40,
 		'File::Temp'	=> 0.19,
 		'Test::More'	=> 1.001014,
-		'Test::Pod'		=> 1.48,
 	},
 	VERSION_FROM => 'lib/Tree/DAG_Node.pm',
 );
@@ -56,15 +55,25 @@ if ($ExtUtils::MakeMaker::VERSION ge '6.46')
 		{
 			version => 2,
 		},
+		prereqs =>
+		{
+			develop =>
+			{
+				requires =>
+				{
+					'Test::Pod' => 1.48
+				}
+			}
+		},
 		resources =>
 		{
-			bugtracker => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree-DAG_Node',
-			license => 'http://opensource.org/licenses/Artistic-2.0',
-			repository =>
+			bugtracker	=> 'https://rt.cpan.org/Public/Dist/Display.html?Name=Tree-DAG_Node',
+			license		=> 'http://opensource.org/licenses/Artistic-2.0',
+			repository	=>
 			{
-				type => 'git',
-				url => 'https://github.com/ronsavage/Tree-DAG_Node.git',
-				web => 'https://github.com/ronsavage/Tree-DAG_Node',
+				type	=> 'git',
+				url		=> 'https://github.com/ronsavage/Tree-DAG_Node.git',
+				web		=> 'https://github.com/ronsavage/Tree-DAG_Node',
 			},
 		},
 	};

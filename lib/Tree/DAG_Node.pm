@@ -5,7 +5,7 @@ use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 our $Debug   = 0;
-our $VERSION = '1.28';
+our $VERSION = '1.29';
 
 use File::Slurp::Tiny 'read_lines';
 
