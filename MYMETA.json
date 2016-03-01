@@ -35,8 +35,7 @@
          "requires" : {
             "File::Spec" : "3.4",
             "File::Temp" : "0.19",
-            "Test::More" : "1.001014",
-            "Test::Pod" : "1.48"
+            "Test::More" : "1.001014"
          }
       }
    },
