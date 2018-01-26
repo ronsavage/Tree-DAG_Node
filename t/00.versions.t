@@ -11,6 +11,7 @@ use Test::More;
 
 use File::Slurp::Tiny;
 use strict;
+use utf8;
 use warnings;
 
 # ----------------------
@@ -21,6 +22,7 @@ my(@modules) = qw
 /
 	File::Slurp::Tiny
 	strict
+	utf8
 	warnings
 /;
 
