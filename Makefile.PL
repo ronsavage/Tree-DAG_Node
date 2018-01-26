@@ -29,7 +29,9 @@ my(%params) =
 	PREREQ_PM	=>
 	{
 		'File::Slurp::Tiny'	=> 0.003,
+		'open'				=> 0,
 		'strict'			=> 0,
+		'utf8'				=> 0,
 		'warnings'			=> 0,
 	},
 	TEST_REQUIRES =>
