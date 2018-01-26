@@ -38,7 +38,7 @@ my(%params) =
 	{
 		'File::Spec'	=> 3.40,
 		'File::Temp'	=> 0.19,
-		'Test::More'	=> 1.001014,
+		'Test::More'	=> 1.001002,
 	},
 	VERSION_FROM => 'lib/Tree/DAG_Node.pm',
 );
