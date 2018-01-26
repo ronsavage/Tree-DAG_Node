@@ -24,7 +24,6 @@ my(%params) =
 		SUFFIX		=> 'gz'
 	},
 	DISTNAME	=> 'Tree-DAG_Node',
-	LICENSE		=> 'artistic_2',
 	NAME		=> 'Tree::DAG_Node',
 	PL_FILES	=> {},
 	PREREQ_PM	=>
@@ -44,7 +43,7 @@ my(%params) =
 
 if ( ($ExtUtils::MakeMaker::VERSION =~ /^\d\.\d\d$/) && ($ExtUtils::MakeMaker::VERSION > 6.30) )
 {
-	$params{LICENSE} = 'artistic_2';
+	$params{LICENSE} = 'perl';
 }
 
 if ($ExtUtils::MakeMaker::VERSION ge '6.46')
