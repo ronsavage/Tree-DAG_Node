@@ -9,10 +9,8 @@ use Tree::DAG_Node; # For the version #.
 
 use Test::More;
 
-use File::Slurp::Tiny;
-use strict;
+use File::Slurper;
 use utf8;
-use warnings;
 
 # ----------------------
 
@@ -20,7 +18,7 @@ pass('All external modules loaded');
 
 my(@modules) = qw
 /
-	File::Slurp::Tiny
+	File::Slurper
 	strict
 	utf8
 	warnings
