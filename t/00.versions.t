@@ -1,5 +1,8 @@
 #/usr/bin/env perl
 
+use strict;
+use warnings;
+
 # I tried 'require'-ing modules but that did not work.
 
 use Tree::DAG_Node; # For the version #.
@@ -20,7 +23,6 @@ my(@modules) = qw
 /
 	ExtUtils::MakeMaker
 	File::Slurper
-	perl
 	strict
 	utf8
 	warnings
