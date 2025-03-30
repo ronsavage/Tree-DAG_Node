@@ -10,9 +10,8 @@ use Tree::DAG_Node; # For the version #.
 use Test::More;
 
 use File::Slurper;
-use strict;
+
 use utf8;
-use warnings;
 
 # ----------------------
 
