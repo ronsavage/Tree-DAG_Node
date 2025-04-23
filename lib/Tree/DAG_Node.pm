@@ -5,7 +5,7 @@ use warnings;
 use warnings qw(FATAL utf8); # Fatalize encoding glitches.
 
 our $Debug   = 0;
-our $VERSION = '1.33';
+our $VERSION = '1.34';
 
 use File::Slurper 'read_lines';
 
@@ -1113,8 +1113,12 @@ sub read_tree
 	my(@stack);
 	my($tos);
 
-	for my $line (read_lines($file_name, 'UTF-8', 0) )
+	for my $line (read_lines($file_name) )
 	{
+		# Ensure inter-OS compatability.
+
+		$line =~ s/[\r\n]/\n/gms;
+
 		$count++;
 
 		if ($count == 1)

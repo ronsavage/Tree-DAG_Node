@@ -5,7 +5,7 @@ use warnings  qw(FATAL utf8); # Fatalize encoding glitches.
 use File::Spec;
 use File::Temp;
 
-use File::Slurper 'read_text';
+use File::Slurper 'read_lines';
 
 use Test::More;
 
@@ -28,7 +28,12 @@ sub process
 	print $fh "$_\n" for @{$root -> tree2string({no_attributes => $no_attr})};
 	close $fh;
 
-	is(read_text($input_file_name), read_text($test_file_name), "\u$file_name attributes: Output tree matches shipped tree");
+	# Ensure inter-OS compatability.
+
+	my(@expected)	= map{s/[\r\n]/\n/gms} read_lines($input_file_name);
+	my(@got)		= map{s/[\r\n]/\n/gms} read_lines($test_file_name);
+
+	is(join('', @expected), join('', @got), "\u$file_name attributes: Output tree matches shipped tree");
 
 } # End of process.
 
@@ -40,7 +45,7 @@ my($node) = Tree::DAG_Node -> new;
 
 isa_ok($node, 'Tree::DAG_Node', 'new() returned correct object type');
 
-for (qw/utf8/)# with without/)
+for (qw/utf8 with without/)
 {
 	process($node, $_);
 }

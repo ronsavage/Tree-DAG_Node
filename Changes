@@ -1,5 +1,15 @@
 Revision history for Perl module Tree::DAG_Node.
 
+1.34  2025-04-23T17:01:00
+	- Thanx to Shawn Laffan for reporting a problem with line-endings in files read and written,
+		by both Tree::DAG_Node and t/read.tree.t, when he tests under Strawberry Perl.
+	- The 2 test files t/tree.with*.txt ship as ISO-8859-1 while t/tree.utf8.attributes.txt ships
+		as UTF-8. So...
+	- Don't explicitly use UTF-8 encoding in DAG_Node.pm's sub read_tree(). Rather, use a regexp
+		to standardize line endings after reading. Likewise, in t/read.tree.t, do the same.
+	- Lastly, I have un-commented the 2 extra tests at the end of t/read.tree.t. Specifically,
+		line 48 was 'for (qw/utf8/)# with without/)'. It now says 'for (qw/utf8 with without/)'
+
 1.33  2025-03-20T11:16:00
 	- Replace the discouraged File::Slurp::Tiny with File::Slurper.
 		Thanx to Marcel Telka for the report.
