@@ -20,7 +20,7 @@ sub process
 	my($temp_dir)        = File::Temp -> newdir('temp.XXXX', CLEANUP => 1, EXLOCK => 0, TMPDIR => 1);
 	my($temp_dir_name)   = $temp_dir -> dirname;
 	my($test_file_name)  = File::Spec -> catfile($temp_dir_name, "$file_name.txt");
-	my($input_file_name) = File::Spec -> catfile('t', "tree.$file_name.attributes.txt");
+	my($input_file_name) = File::Spec -> catfile('t', "$file_name.txt");
 	my($root)            = $node -> read_tree($input_file_name);
 	my($no_attr)         = $file_name =~ /without/ ? 1 : 0;
 
@@ -45,9 +45,15 @@ my($node) = Tree::DAG_Node -> new;
 
 isa_ok($node, 'Tree::DAG_Node', 'new() returned correct object type');
 
+my($sample_file_name);
+
 for (qw/utf8 with without/)
 {
-	process($node, $_);
+	$sample_file_name = "tree.$_.attributes";
+
+	process($node, $sample_file_name);
 }
+
+process($node, 'metag.cooked.tree');
 
 done_testing;
