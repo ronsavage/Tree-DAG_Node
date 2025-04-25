@@ -62,7 +62,7 @@ Revision history for Perl module Tree::DAG_Node.
 		'use Tree::DAG_Node'. That's no good when code is expecting a different encoding
 		(raw, etc.)". See RT#105798. Karen Etheridge followed up with a comment about it appearing
 		in another module of mine. Then I checked all my modules (including some not intended for
-		publication - Local::*) and found about 28 offenders, with some using it inn multiple files.
+		publication - Local::*) and found about 28 offenders, with some using it in multiple files.
 		The original idea came from adopting what Tom Christiansen calls his 'Standard Preamble':
 		http://www.perl.com/pub/2012/04/perlunicook-standard-preamble.html
 		All tests still work after removing that line.
@@ -167,7 +167,7 @@ Revision history for Perl module Tree::DAG_Node.
 	- Add method read_tree(), for text files. It uses Perl6::Slurp (which supports utf8).
 	- Add methods read_attributes() and string2hashref($s) for use by read_tree().
 	- Add t/read.tree.t to test read_tree().
-	- Add t/tree.utf8.attrbiutes.txt, in utf8, for use by t/read.tree.t.
+	- Add t/tree.utf8.attributes.txt, in utf8, for use by t/read.tree.t.
 	- Add t/tree.with.attributes.txt and t/tree.without.attributes.txt for use by t/read.tree.t.
 	- Make Perl V 5.8.1 a pre-req so we have access to the utf8 pragma.
 

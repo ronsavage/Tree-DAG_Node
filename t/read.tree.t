@@ -30,8 +30,8 @@ sub process
 
 	# Ensure inter-OS compatability.
 
-	my(@expected)	= map{s/[\r\n]/\n/gms} read_lines($input_file_name);
-	my(@got)		= map{s/[\r\n]/\n/gms} read_lines($test_file_name);
+	my(@expected)	= map{s/[\r\n]$/[\n]/g} read_lines($input_file_name);
+	my(@got)		= map{s/[\r\n]$/[\n]/g} read_lines($test_file_name);
 
 	is(join('', @expected), join('', @got), "\u$file_name attributes: Output tree matches shipped tree");
 

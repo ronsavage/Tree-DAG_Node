@@ -1117,7 +1117,7 @@ sub read_tree
 	{
 		# Ensure inter-OS compatability.
 
-		$line =~ s/[\r\n]/\n/gms;
+		$line =~ s/[\r\n]$/[\n]/g;
 
 		$count++;
 
