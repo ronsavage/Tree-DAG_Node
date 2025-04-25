@@ -46,11 +46,13 @@ if ($options{help} == 1)
 
 my($input_file_name)	= File::Spec -> catfile($options{dir_name}, $options{in_file_name});
 my($output_file_name)	= File::Spec -> catfile($options{dir_name}, $options{in_file_name} . '.new');
+
+say "Reading: $input_file_name";
+
 my($node)				= Tree::DAG_Node -> new;
 my($root)				= $node -> read_tree($input_file_name);
 my($no_attr)			= 0;
 
-say "Reading: $input_file_name";
 say "Writing: $output_file_name";
 
 open(my $fh, '> :encoding(utf-8)', $output_file_name);
