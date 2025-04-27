@@ -688,7 +688,7 @@ sub format_node
 {
 	my($self, $options, $node) = @_;
 	my($s) = $node -> name;
-	$s     .= '. Attributes: ' . $self -> hashref2string($node -> attributes) if (! $$options{no_attributes});
+	$s     .= $$options{no_attributes} ? '. Attributes: {}' : '. Attributes: ' . $self -> hashref2string($node -> attributes);
 
 	return $s;
 
@@ -1117,7 +1117,7 @@ sub read_tree
 	{
 		# Ensure inter-OS compatability.
 
-		$line =~ s/[\r\n]$/[\n]/g;
+		$line =~ s/\r$//g;
 
 		$count++;
 
