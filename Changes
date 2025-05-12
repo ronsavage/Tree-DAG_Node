@@ -1,5 +1,8 @@
 Revision history for Perl module Tree::DAG_Node.
 
+1.36  2055-00-00T00:00:00
+	- Add MANIFEST.SKIP to MANIFEST.SKIP
+
 1.35  2025-05-12T17:00:00
 	- Change sub hashref2string() line 726 so it does not generate an error or warning when
 		the node or node name is '' (empty string), undef or 0 (zero).
@@ -8,7 +11,7 @@ Revision history for Perl module Tree::DAG_Node.
 		to have been done as per the last dot point under v 1.34 below, but was not done properly.
 	- This last point also affects the related module Data::RenderAsTree, which ships with a
 		range of test programs and sample scripts which futher exercise these features.
-		The point of these latter samples is so you can use them without having to fiddle about
+		The point of these 9 plain scripts is so you can use them without having to fiddle about
 		removing the test code in the corresponding test scripts.
 
 1.34  2025-04-23T17:01:00
