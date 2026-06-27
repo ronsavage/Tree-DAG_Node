@@ -1,7 +1,9 @@
 Revision history for Perl module Tree::DAG_Node.
 
-1.36  2055-00-00T00:00:00
-	- Add MANIFEST.SKIP to MANIFEST.SKIP
+1.36  2025-00-00T00:00:00
+	- Modernize MANIFEST.SKIP.
+	- Fix typo in the 2nd FAQ: "How to process every node in tree?". The POD contained
+		"my(@node, $options) = @_;" whereas it should read "my($node, $options) = @_;".
 
 1.35  2025-05-12T17:00:00
 	- Change sub hashref2string() line 726 so it does not generate an error or warning when

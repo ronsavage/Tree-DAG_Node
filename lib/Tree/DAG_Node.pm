@@ -3249,7 +3249,7 @@ an arrayref as a stack:
 		callback =>
 		sub
 		{
-			my(@node, $options) = @_;
+			my($node, $options) = @_;
 
 			# Process $node, using $options...
 
