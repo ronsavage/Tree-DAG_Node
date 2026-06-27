@@ -7,6 +7,7 @@ Revision history for Perl module Tree::DAG_Node.
 	- Add new version of LICENSE to the distro.
 	- Add new files LICENSE-Artistic-2.0 & LICENSE-GPL-3 to the distro.
 	- Add Data::Dumper, Getopt::Long, perl to Makefile.PL.
+	- Remove open from Makefile.PL.
 	- Modernize MANIFEST.SKIP.
 
 1.35  2025-05-12T17:00:00

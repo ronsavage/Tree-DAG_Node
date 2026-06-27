@@ -33,7 +33,6 @@ my(%params) =
 		'ExtUtils::MakeMaker'	=> 7.70,
 		'File::Slurper'			=> 0.014,
 		'Getopt::Long'			=> 2.57,
-		'open'					=> 0,
 		'perl'					=> 5.30,
 		'strict'				=> 0,
 		'utf8'					=> 0,
