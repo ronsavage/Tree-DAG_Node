@@ -1,6 +1,6 @@
 Revision history for Perl module Tree::DAG_Node.
 
-1.36  2025-00-00T00:00:00
+1.36  2025-06-28T11:53:00
 	- Fix typo in the 2nd FAQ: "How to process every node in tree?". The POD contained
 		"my(@node, $options) = @_;" whereas it should read "my($node, $options) = @_;".
 		Thanx to Torsten Seemann for the report.
