@@ -3395,10 +3395,7 @@ Sean M. Burke, C<< <sburke@cpan.org> >>
 
 Copyright 1998-2001, 2004, 2007 by Sean M. Burke and David Hand.
 
-This Program of ours is 'OSI Certified Open Source Software';
-you can redistribute it and/or modify it under the terms of
-The Perl License, a copy of which is available at:
-http://dev.perl.org/licenses/
+See the accompanying LICENSE file.
 
 This program is distributed in the hope that it will be useful, but
 without any warranty; without even the implied warranty of
