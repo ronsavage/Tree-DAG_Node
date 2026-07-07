@@ -5,6 +5,7 @@ Revision history for Perl module Tree::DAG_Node.
 		with the module App::Software::License. The specific command I ran is (all on 1 line):
 		software-license --type license --holder "Sean M. Burke and David Hand" --license Perl_5
 		--year 1998 > LICENSE
+	- Add AI_POLICY.md file.
 	- Modernize MANIFEST.SKIP again.
 
 1.37  2026-06-29T08:00:00
